@@ -24,17 +24,16 @@ import (
 
 // PodHealthSpec defines the desired state of PodHealth
 type PodHealthSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of PodHealth. Edit PodHealth_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// PodSelector selects pods to get the Health for
+	PodSelector metav1.LabelSelector `json:"podSelector,omitempty"`
 }
 
 // PodHealthStatus defines the observed state of PodHealth
 type PodHealthStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	Ready       int         `json:"ready,omitempty"`
+	NotReady    int         `json:"unready,omitempty"`
+	Total       int         `json:"total,omitempty"`
+	LastChecked metav1.Time `json:"lastChecked,omitempty"`
 }
 
 // +kubebuilder:object:root=true
