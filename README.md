@@ -1,6 +1,6 @@
 # GoDays 2020 Kubernetes workshop
 
-## PodHelth Controller using kubebuilder
+## PodHealth Controller using kubebuilder
 
 ### Create with
 
