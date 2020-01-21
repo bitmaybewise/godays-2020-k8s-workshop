@@ -1,0 +1,26 @@
+# permissions to do edit podhealths.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: podhealth-editor-role
+rules:
+- apiGroups:
+  - training.example.com
+  resources:
+  - podhealths
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - training.example.com
+  resources:
+  - podhealths/status
+  verbs:
+  - get
+  - patch
+  - update
